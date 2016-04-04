@@ -1,4 +1,5 @@
 # camel\_snake
+[![Gem Version](https://badge.fury.io/rb/camel_snake.svg)](https://badge.fury.io/rb/camel_snake)
 [![Build Status](https://travis-ci.org/key-amb/ruby-camel_snake.svg?branch=master)](https://travis-ci.org/key-amb/ruby-camel_snake)
 
 This package provides a Mix-in module which extends String class and adds features
