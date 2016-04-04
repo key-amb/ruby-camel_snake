@@ -1,8 +1,22 @@
-# CamelSnake
+# camel\_snake
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/camel_snake`. To experiment with that code, run `bin/console` for an interactive prompt.
+This package provides a Mix-in module which extends String class and adds features
+to convert itself into _CamelCase_ or *snake\_case*.
 
-TODO: Delete this and the text above, and describe your gem
+## Usage
+
+```ruby
+require 'camel_snake'
+
+"FooBar".extend(CamelSnake).to_snake  #=> "foo_bar"
+"bar_baz".extend(CamelSnake).to_camel #=> "BarBaz"
+
+# Or you can do bellow
+String.include CamelSnake
+
+"FooBar".to_snake  #=> "foo_bar"
+"bar_baz".to_camel #=> "BarBaz"
+```
 
 ## Installation
 
@@ -12,30 +26,44 @@ Add this line to your application's Gemfile:
 gem 'camel_snake'
 ```
 
-And then execute:
-
-    $ bundle
+And then run `bundle` command on your terminal.
 
 Or install it yourself as:
 
-    $ gem install camel_snake
+```
+$ gem install camel_snake
+```
 
-## Usage
+## Motivation
 
-TODO: Write usage instructions here
+I know there are a lot of packages which provide similar features including
+ActiveSupport in Rails.  
+But I want a minimul package which gives only these two conversion functions
+out of Rails.
 
-## Development
+With [refinements](http://ruby-doc.org/core-2.3.0/doc/syntax/refinements_rdoc.html),
+Ruby's recent feature, we can safely extend classes.  
+Jan Lelis's [sugar_refinery](https://rubygems.org/gems/sugar_refinery) uses this
+feature. But it is not usable in older Ruby versions.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+This module is simple and hopefully usable in many Ruby versions.
+And it meets my needs.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## See Also
 
-## Contributing
+- [sugar_refinery](https://rubygems.org/gems/sugar_refinery)
+- [string-cases](https://rubygems.org/gems/string-cases)
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/camel_snake.
+## Contribution
 
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new [Pull Request](../../pull/new/master)
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+Copyright (c) 2016 YASUTAKE Kiyoshi
