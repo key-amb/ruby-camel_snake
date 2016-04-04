@@ -1,4 +1,5 @@
 # camel\_snake
+[![Build Status](https://travis-ci.org/key-amb/ruby-camel_snake.svg?branch=master)](https://travis-ci.org/key-amb/ruby-camel_snake)
 
 This package provides a Mix-in module which extends String class and adds features
 to convert itself into _CamelCase_ or *snake\_case*.
