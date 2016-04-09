@@ -12,7 +12,7 @@ module CamelSnake
   # @return [String] CamelCase or camelCase string
   def to_camel firstletter=:capital
     if firstletter == :capital
-      to_pascalcase
+      to_pascal
     else
       gsub(/_([a-z])/) { $1.upcase }
     end

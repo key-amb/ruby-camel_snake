@@ -19,6 +19,9 @@ describe CamelSnake do
       it "#{sbj} => #{expect}" do
         expect(sbj.to_pascal).to eq expect
       end
+      it "#{sbj} => #{expect} (by #to_camel)" do
+        expect(sbj.to_camel).to eq expect
+      end
     end
   end
 
